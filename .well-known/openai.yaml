@@ -1,0 +1,35 @@
+openapi: 3.0.1
+info:
+  title: NBA Basketball Knowledge
+  description: Get current and historical stats for NBA players and games.
+  version: 'v1'
+servers:
+  - url: Replit
+paths:
+  /team_ID_by_Name:
+    get:
+      operationId: getTeamID
+      summary: Retrieves teams ID by team name for the current season.
+      responses:
+        "200":
+          description: OK
+  /current_games:
+    get:
+      operationId: getGames
+      summary: Retrieves all current games in the NBA.
+      responses:
+        "200":
+          description: OK
+  /year_standings:
+    get:
+      operationId: getGames
+      summary: Retrieves the standings in the NBA relative to a specific season.
+      parameters:
+      - in: query
+        name: year
+        schema:
+            type: string
+        description: Filter by seasons. Seasons are represented by the year they began. For example, 2018 represents season 2018-2019.
+      responses:
+        "200":
+          description: OK
